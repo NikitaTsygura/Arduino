@@ -1,23 +1,23 @@
-const int buttonLED = 8;
-const int ledPinOne = 12;
-const int ledPinTwo = 13;
+const int button = 8;
+const int ledPinOne = 13;
+const int ledPinButton = 12;
 
 void setup() {
-  pinMode(buttonLED, INPUT_PULLUP);
+  pinMode(button, INPUT_PULLUP);
   pinMode(ledPinOne, OUTPUT);
-  pinMode(ledPinTwo, OUTPUT);
+  pinMode(ledPinButton, OUTPUT);
 }
 
 void loop() {
-  int buttonState = digitalRead(buttonLED);
+  int buttonState = digitalRead(button);
   if (buttonState == LOW) {
-    digitalWrite(ledPinOne, HIGH);
+    digitalWrite(ledPinButton, HIGH);
   } else {
-    digitalWrite(ledPinOne, LOW);
+    digitalWrite(ledPinButton, LOW);
   }
 
-  digitalWrite(ledPinTwo, HIGH);
+  digitalWrite(ledPinOne, HIGH);
   delay(1000);
-  digitalWrite(ledPinTwo, LOW);
+  digitalWrite(ledPinOne, LOW);
   delay(1000);
 }
